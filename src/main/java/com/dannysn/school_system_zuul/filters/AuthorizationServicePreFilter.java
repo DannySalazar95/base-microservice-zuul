@@ -42,7 +42,7 @@ public class AuthorizationServicePreFilter extends ZuulFilter {
             Jwt jwt = authorizationService.generateJwtEncode();
             context.addZuulRequestHeader("Jwt", jwt.getJwt());
         }catch (FeignException e){
-            throw new ZuulException(e.getMessage(), e.status() , "GENERATE_JWT_ENCODE");
+            throw new ZuulException(e.getMessage(), e.status() , "GENERATE_JWT_ENCODE_EXCEPTION");
         }
         return null;
     }

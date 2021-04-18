@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 )
 public interface AuthorizationServiceRest {
 
-    @GetMapping(value = "/api/v1/jwt-encode", consumes = "application/json")
-    public Jwt jwtEncode();
+    @GetMapping(value = "/v1/jwt-encode", consumes = "application/json")
+    Jwt jwtEncode();
 
 }
