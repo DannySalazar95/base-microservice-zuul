@@ -31,7 +31,7 @@ public class AuthorizationServicePreFilter extends ZuulFilter {
     @Override
     public boolean shouldFilter() {
         String URI = RequestContext.getCurrentContext().getRequest().getRequestURI();
-        String[] URI_exceptions = new String[] {"/authorization/oauth/token","/authorization/api/v1/jwt-encode"};
+        String[] URI_exceptions = new String[] {"/authorization/v1/oauth/token","/authorization/api/v1/jwt-encode"};
         return !ArrayUtils.contains(URI_exceptions, URI);
     }
 
